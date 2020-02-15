@@ -12,12 +12,13 @@ public class ISBN10 {
 
 	public int number(){
 		int sum = 0;
-		for(int i = isbn.length; i > 0; i--){
-			System.out.println(isbn[i-1] * (10^i-1));
-			sum += isbn[i-1] * 10^i-1;
+		for(int i = 0; i < 10; i++){
+			sum += isbn[i] * 10^i;
 		}
+
 		return sum;
 	}
+
 
 
 

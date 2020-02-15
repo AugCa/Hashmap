@@ -110,7 +110,7 @@ public class HashTableTest {
 
 		assertTrue(books.insert(secondEdition));
 		assertTrue(books.insert(thirdEdition));
-
+		System.out.println(secondEdition.hashCode() + ", " + thirdEdition.hashCode() + ", " + secondEditionSecondCopy.hashCode() + ", " + thirdEditionSecondCopy.hashCode());
 		assertTrue(books.contains(secondEdition));
 		assertTrue(books.contains(secondEditionSecondCopy));
 		assertTrue(books.contains(thirdEditionSecondCopy));

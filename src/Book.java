@@ -24,10 +24,12 @@ public class Book{
 
 	@Override
 	public int hashCode(){
-
-
 		int num = isbn.number() + (int) title.length();
-		return (isbn.number() + 31) % 1000;
+		num += 31;
+		num %= 1000;
+		num += 17;
+		num %= 100;
+		return num;
 
 
 
