@@ -1,3 +1,6 @@
+//August Carlsson auca4478
+//Adan Anwar adan9862
+
 /*
  * Denna klass ska förberedas för att kunna användas som nyckel i en hashtabell. 
  * Du får göra nödvändiga ändringar även i klasserna MyString och ISBN10.
@@ -24,11 +27,13 @@ public class Book{
 
 	@Override
 	public int hashCode(){
+		//num är isbn nummer + längden på titeln.
+		//Isbn nummer bör vara unikt för alla böcker, bortsett från när en ny upplaga av en bok kommer, då kanske den har samma ISBN men längre titel.
 		int num = isbn.number() + (int) title.length();
-		num += 31;
-		num %= 1000;
-		num += 17;
-		num %= 100;
+		num += 31; //Primtal för att minska risk för kollision
+		num %= 1000; //Modulo för att göra talen mindre och mer unika
+		num += 17; //Samma som ovan
+		num %= 100; //Samma som ovan
 		return num;
 
 
